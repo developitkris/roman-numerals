@@ -19,20 +19,22 @@ $(document).ready(function() {
 
 
 //Business Logic
-var roman= ["M", "D", "C", "L", "X", "V", "I"];
-var number=[1000, 500, 100, 50, 10, 5, 1];
+var roman= ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"];
+var number=[1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
 var output = "";
 
 function romanize(integer){
   console.log("Im in here!")
-  for(var i=0; i<integer; i++){
+  var output = "";
+
+    while(integer>0){
     console.log("after for loop");
+    for(i in number) {
     if (integer >= number[i]){
       output+=roman[i];
       integer-= number[i];
-
     };
-
+};
   };
 return output;
 };
