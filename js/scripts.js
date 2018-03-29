@@ -5,7 +5,6 @@ $(document).ready(function() {
 
     var userNum = parseInt($("#numberInput").val());
     var finalResult =  romanize(userNum);
-    alert(finalResult);
 
     $("#result").text(finalResult);
 
