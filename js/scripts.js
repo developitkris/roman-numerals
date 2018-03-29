@@ -14,26 +14,35 @@ $(document).ready(function() {
 });
 
 
-
-
-
 //Business Logic
 var roman= ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"];
 var number=[1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
-var output = "";
+var output = [];
 
-function romanize(integer){
-  console.log("Im in here!")
-  var output = "";
+function romanize(integer){ //249
+  console.log("Im in the loop!")
+  var output = [];
 
-    while(integer>0){
-    console.log("after for loop");
-    for(i in number) {
-    if (integer >= number[i]){
-      output+=roman[i];
-      integer-= number[i];
-    };
-};
+  // console.log("after for loop");
+  for(var i = 0;i<number.length;i++) {
+    var thisNumber = number[i];
+    while(integer>=thisNumber){
+      console.log(thisNumber);
+      output.push(roman[i]);
+      integer-= thisNumber;
+      alert('integer = ' + integer);
+      alert('thisNumber = ' + thisNumber);
+    }
   };
-return output;
+  return output.join("");
 };
+
+
+//integer = 249 (== CXCLIX)
+//output = ""
+//i = [4]
+//number = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+//roman = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
+
+//roman[i] =C
+//number[i] =100
