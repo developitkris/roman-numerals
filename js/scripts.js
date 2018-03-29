@@ -19,7 +19,7 @@ var roman= ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I
 var number=[1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
 var output = [];
 
-function romanize(integer){ //249
+function romanize(integer){
   console.log("Im in the loop!")
   var output = [];
 
@@ -30,8 +30,6 @@ function romanize(integer){ //249
       console.log(thisNumber);
       output.push(roman[i]);
       integer-= thisNumber;
-      alert('integer = ' + integer);
-      alert('thisNumber = ' + thisNumber);
     }
   };
   return output.join("");
